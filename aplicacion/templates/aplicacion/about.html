@@ -1,0 +1,32 @@
+{% extends 'aplicacion/base.html' %}
+{% load static %}
+
+{% block titulo %}
+    Mi Perfil
+{% endblock titulo %}
+
+{% block cabecera %}
+    Acerca de Mi
+{% endblock cabecera %}
+
+{% block contenido %}
+<!DOCTYPE html>
+<html lang="en">
+<body>
+  <main>
+    <h4>
+      <img src="{% static 'aplicacion/assets/profile.jpg' %}" alt="Mi Foto de Perfil">
+      <p>Hola, mi nombre es Simon Valles, soy de Venezuela y tengo 37 años. Soy ingeniero Industrial 
+        y estoy interesado en la programación, especialmente en la ciencia de datos.</p>
+    </h4>
+  </main>
+</body>
+</html>
+
+
+{% endblock contenido %}
+
+
+{% block descripcion %}
+    
+{% endblock descripcion %}

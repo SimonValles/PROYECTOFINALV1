@@ -1,0 +1,37 @@
+{% extends 'aplicacion/base.html' %}
+{% load static %}
+
+
+{% block cabecera %}
+Proveedor por CUIT: {{ cuit }}
+{% endblock cabecera %}
+    
+
+{% block contenido %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>RAZON SOCIAL</th>
+                <th>DOMICILIO</th>
+                <th>CUIT</th>
+                <th>EMAIL</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for proveedor in proveedores %}
+        <tr>
+                <td>{{ proveedor.id }}</td>
+                <td>{{ proveedor.razonSocial }}</td>
+                <td>{{ proveedor.domicilio }}</td>
+                <td>{{ proveedor.cuit }}</td>
+                <td>{{ proveedor.email }}</td>
+        </tr>
+        {% endfor %}
+_        </tbody>
+    </table>
+{% endblock contenido %}
+
+{% block descripcion %}
+    
+{% endblock descripcion %}

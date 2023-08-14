@@ -1,0 +1,37 @@
+{% extends 'aplicacion/base.html' %}
+{% load static %}
+
+
+{% block cabecera %}
+Vendedor por DNI: {{ dni }}
+{% endblock cabecera %}
+    
+
+{% block contenido %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>NOMBRE</th>
+                <th>APELLIDO</th>
+                <th>DNI</th>
+                <th>TELEFONO</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for vendedor in vendedores %}
+        <tr>
+                <td>{{ vendedor.id }}</td>
+                <td>{{ vendedor.nombre }}</td>
+                <td>{{ vendedor.apellido }}</td>
+                <td>{{ vendedor.dni }}</td>
+                <td>{{ vendedor.telefono }}</td>
+        </tr>
+        {% endfor %}
+_        </tbody>
+    </table>
+{% endblock contenido %}
+
+{% block descripcion %}
+    
+{% endblock descripcion %}

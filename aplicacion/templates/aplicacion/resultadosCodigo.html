@@ -1,0 +1,35 @@
+{% extends 'aplicacion/base.html' %}
+{% load static %}
+
+
+{% block cabecera %}
+Artículo por código: {{ codigo }}
+{% endblock cabecera %}
+    
+
+{% block contenido %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>CODIGO</th>
+                <th>NOMBRE</th>
+                <th>MARCA</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for articulo in articulos %}
+        <tr>
+                <td>{{ articulo.id }}</td>
+                <td>{{ articulo.codigo }}</td>
+                <td>{{ articulo.nombre }}</td>
+                <td>{{ articulo.marca }}</td>
+        </tr>
+        {% endfor %}
+_        </tbody>
+    </table>
+{% endblock contenido %}
+
+{% block descripcion %}
+    
+{% endblock descripcion %}
