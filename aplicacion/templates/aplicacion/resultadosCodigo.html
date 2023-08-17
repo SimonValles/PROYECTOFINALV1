@@ -8,6 +8,13 @@ Artículo por código: {{ codigo }}
     
 
 {% block contenido %}
+<td>
+    <a
+    href="{% url 'inicio' %}"
+    class="btn btn-primary" href="{% url 'buscar_codigo' %}">Volver a Inicio
+    </a>
+</td>
+
     <table class="table">
         <thead>
             <tr>
@@ -26,7 +33,7 @@ Artículo por código: {{ codigo }}
                 <td>{{ articulo.marca }}</td>
         </tr>
         {% endfor %}
-_        </tbody>
+        </tbody>
     </table>
 {% endblock contenido %}
 

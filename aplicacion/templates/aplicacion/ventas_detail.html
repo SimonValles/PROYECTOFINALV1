@@ -1,0 +1,42 @@
+{% extends 'aplicacion/base.html' %}
+{% load static %}
+{% block titulo %}Ventas{% endblock titulo %}
+{% block cabecera %}Ventas{% endblock cabecera %}
+{% block contenido %}
+<table>
+    <tr>
+        <td><h2>Venta: {{object}}</h2></td>
+    </tr>
+</table>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Fecha</th>
+            <th>Codigo</th>
+            <th>Producto</th>
+            <th>Cantidad</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{ object.id }}</td>
+            <td>{{ object.fecha }}</td>
+            <td>{{ object.codigo }}</td>
+            <td>{{ object.producto }}</td>
+            <td>{{ object.cantidad }}</td>
+        </tr>
+    </tbody>
+</table>
+               
+<a 
+href="{% url 'ventas' %}" 
+class="btn btn-danger" 
+style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+><i class="fa fa-share fa-sm" title="List Back"></i>
+</a>
+{% endblock contenido %}
+
+{% block descripcion %}
+    
+{% endblock descripcion %}

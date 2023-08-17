@@ -8,6 +8,12 @@ Ventas asociadas al codigo: {{ codigo }}
     
 
 {% block contenido %}
+<td>
+    <a
+    href="{% url 'inicio' %}"
+    class="btn btn-primary" href="{% url 'buscar_venta' %}">Volver a Inicio
+    </a>
+</td>
     <table class="table">
         <thead>
             <tr>

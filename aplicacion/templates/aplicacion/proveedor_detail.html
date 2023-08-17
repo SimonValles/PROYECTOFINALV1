@@ -1,0 +1,42 @@
+{% extends 'aplicacion/base.html' %}
+{% load static %}
+{% block titulo %}Proveedor{% endblock titulo %}
+{% block cabecera %}Proveedor{% endblock cabecera %}
+{% block contenido %}
+<table>
+    <tr>
+        <td><h2>Proveedor: {{object}}</h2></td>
+    </tr>
+</table>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Razon Social</th>
+            <th>Domicilio</th>
+            <th>Cuit</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{ object.id }}</td>
+            <td>{{ object.razonSocial }}</td>
+            <td>{{ object.domicilio }}</td>
+            <td>{{ object.cuit }}</td>
+            <td>{{ object.email }}</td>
+        </tr>
+    </tbody>
+</table>
+               
+<a 
+href="{% url 'proveedores' %}" 
+class="btn btn-danger" 
+style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+><i class="fa fa-share fa-sm" title="List Back"></i>
+</a>
+{% endblock contenido %}
+
+{% block descripcion %}
+    
+{% endblock descripcion %}

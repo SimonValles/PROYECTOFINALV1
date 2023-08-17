@@ -1,4 +1,6 @@
 from django import forms
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
 
 class ArticuloForm(forms.Form):
     codigo = forms.CharField(label='Código del Artículo', max_length=50, required=True)
@@ -22,3 +24,28 @@ class VentasForm(forms.Form):
     codigo = forms.CharField(label='Codigo del Articulo', max_length=50, required=True)
     producto = forms.CharField(label='Nombre del Articulo', max_length=50, required=True)
     cantidad = forms.IntegerField(label='Unidades Vendidas', required=True)
+    
+class RegistroUsuariosForm(UserCreationForm):
+    email = forms.EmailField(label="Email usuario")
+    password1= forms.CharField(label="Contraseña", widget=forms.PasswordInput)
+    password2= forms.CharField(label="Confirmar contraseña", widget=forms.PasswordInput)
+    
+    class Meta:
+        model = User
+        fields = ['username', 'email', 'password1', 'password2']
+        help_texts = {k:"" for k in fields}
+
+class UserEditForm(UserCreationForm):
+    email = forms.EmailField(label="Mofificar e-mail")
+    password1 = forms.CharField(label='Contraseña', widget=forms.PasswordInput)
+    password2 = forms.CharField(label='Repetir contraseña', widget=forms.PasswordInput)
+    first_name = forms.CharField(label='Nombre/s', max_length=50, required=False)
+    last_name = forms.CharField(label='Apellido/s', max_length=50, required=False)
+    
+    class Meta:
+        model = User
+        fields = ['email', 'first_name', 'last_name', 'password1', 'password2']
+        help_texts = { k:"" for k in fields } #Para borrar los mensajes de ayuda del formulario
+         
+class AvatarFormulario(forms.Form):
+    imagen = forms.ImageField(required=True)

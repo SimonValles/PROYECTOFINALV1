@@ -6,7 +6,7 @@
 {% endblock titulo %}
 
 {% block cabecera %}
-    Listado de Artículos
+    Artículos
 {% endblock cabecera %}
 
 {% block contenido %}
@@ -44,17 +44,23 @@
             <td>{{ articulo.marca }}</td>
             <td>
                 <a 
-                  href="{% url 'update_articulo' articulo.id %}" 
+                  href="{% url 'detail_articulo' articulo.id %}"
+                  class="btn btn-info" 
+                  style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+                  ><i class="fa fa-search fa-sm" title="View Record"></i>
+                </a>
+                <a 
+                  href="{% url 'update_articulo' articulo.id %}"
                   class="btn btn-primary" 
                   style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
                   ><i class="fa fa-edit fa-sm" title="Edit Record"></i>
                 </a>
                 <a 
-                  href="{% url 'delete_articulo' articulo.id %}" 
+                  href="{% url 'delete_articulo' articulo.id %}"
                   class="btn btn-danger" 
                   style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
                   ><i class="fa fa-trash fa-sm" title="Delete Record"></i>
-                </a>               
+                </a>           
             </td>
     </tr>
     {% endfor %}

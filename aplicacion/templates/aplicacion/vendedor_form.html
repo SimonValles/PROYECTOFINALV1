@@ -1,16 +1,11 @@
 {% extends 'aplicacion/base.html' %}
 {% load static %}
 
-{% block titulo %}
-    Ventas
-{% endblock titulo %}
-
-{% block cabecera %}
-    Registrar Venta
-{% endblock cabecera %}
-
+{% block titulo %}Vendedores{% endblock titulo %}
+{% block cabecera %}Vendedores{% endblock cabecera %}
 {% block contenido %}
-    <form action="" method="post">
+    <h2>Vendedor</h2>
+    <form action="" method="POST">
         {% csrf_token %}
         <table>
             {{ form.as_table }}
@@ -18,7 +13,5 @@
         <input type="submit" value="Enviar">
     </form>
 {% endblock contenido %}
-
 {% block descripcion %}
-    
 {% endblock descripcion %}

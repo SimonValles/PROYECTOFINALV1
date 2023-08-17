@@ -1,24 +1,18 @@
 {% extends 'aplicacion/base.html' %}
 {% load static %}
-
-{% block titulo %}
-    Proveedores
-{% endblock titulo %}
-
-{% block cabecera %}
-    Modificar Proveedor
-{% endblock cabecera %}
-
+{% block titulo %}Registro{% endblock titulo %}
+{% block cabecera %}Registro{% endblock cabecera %}
 {% block contenido %}
-    <form action="" method="post">
+    <br>
+    <form action="" method="POST">
         {% csrf_token %}
         <table>
             {{ form.as_table }}
         </table>
-        <input type="submit" value="Enviar">
+        <button type="submit">Crear Usuario</button>
     </form>
 {% endblock contenido %}
 
 {% block descripcion %}
-    
+
 {% endblock descripcion %}

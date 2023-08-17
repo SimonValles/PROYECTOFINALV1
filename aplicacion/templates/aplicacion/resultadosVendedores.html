@@ -8,6 +8,12 @@ Vendedor por DNI: {{ dni }}
     
 
 {% block contenido %}
+<td>
+    <a
+    href="{% url 'inicio' %}"
+    class="btn btn-primary" href="{% url 'buscar_vendedor' %}">Volver a Inicio
+    </a>
+</td>
     <table class="table">
         <thead>
             <tr>
@@ -28,7 +34,7 @@ Vendedor por DNI: {{ dni }}
                 <td>{{ vendedor.telefono }}</td>
         </tr>
         {% endfor %}
-_        </tbody>
+        </tbody>
     </table>
 {% endblock contenido %}
 

@@ -1,16 +1,8 @@
 {% extends 'aplicacion/base.html' %}
 {% load static %}
-
-{% block titulo %}
-    Ventas
-{% endblock titulo %}
-
-{% block cabecera %}
-    Ventas 
-{% endblock cabecera %}
-
+{% block titulo %}Ventas{% endblock titulo %}
+{% block cabecera %}Ventas{% endblock cabecera %}
 {% block contenido %}
-
 <table>
     <tr>
         <td width="200"><h2>Venta</h2></td>
@@ -23,8 +15,6 @@
         </td>
     </tr>
 </table>
-
-
 <table class="table">
     <thead>
         <tr>
@@ -33,11 +23,10 @@
             <th>Codigo</th>
             <th>Producto</th>
             <th>Cantidad</th>
-            <th>Acciones</th>
         </tr>
     </thead>
     <tbody>
-    {% for venta in ventas %}
+    {% for venta in ventas_list %}
     <tr>
             <td>{{ venta.id }}</td>
             <td>{{ venta.fecha }}</td>
@@ -46,7 +35,7 @@
             <td>{{ venta.cantidad }}</td>
             <td>
                 <a 
-                  href="{% url 'detail_venta' venta.id %}"
+                  href="{% url 'detail_venta' venta.id %}"  
                   class="btn btn-info" 
                   style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
                   ><i class="fa fa-search fa-sm" title="View Record"></i>
@@ -62,14 +51,13 @@
                   class="btn btn-danger" 
                   style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
                   ><i class="fa fa-trash fa-sm" title="Delete Record"></i>
-                </a>               
+                </a>                                   
             </td>
     </tr>
     {% endfor %}
     </tbody>
 </table>
 {% endblock contenido %}
-
 
 {% block descripcion %}
     

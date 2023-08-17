@@ -8,6 +8,13 @@ Proveedor por CUIT: {{ cuit }}
     
 
 {% block contenido %}
+<td>
+    <a
+    href="{% url 'inicio' %}"
+    class="btn btn-primary" href="{% url 'buscar_proveedor' %}">Volver a Inicio
+    </a>
+</td>
+
     <table class="table">
         <thead>
             <tr>
@@ -28,7 +35,7 @@ Proveedor por CUIT: {{ cuit }}
                 <td>{{ proveedor.email }}</td>
         </tr>
         {% endfor %}
-_        </tbody>
+        </tbody>
     </table>
 {% endblock contenido %}
 

@@ -1,0 +1,42 @@
+{% extends 'aplicacion/base.html' %}
+{% load static %}
+{% block titulo %}Vendedor{% endblock titulo %}
+{% block cabecera %}Vendedor{% endblock cabecera %}
+{% block contenido %}
+<table>
+    <tr>
+        <td><h2>Vendedor: {{object}}</h2></td>
+    </tr>
+</table>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Dni</th>
+            <th>Telefono</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{ object.id }}</td>
+            <td>{{ object.nombre }}</td>
+            <td>{{ object.apellido }}</td>
+            <td>{{ object.dni }}</td>
+            <td>{{ object.telefono }}</td>
+        </tr>
+    </tbody>
+</table>
+               
+<a 
+href="{% url 'vendedores' %}" 
+class="btn btn-danger" 
+style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+><i class="fa fa-share fa-sm" title="List Back"></i>
+</a>
+{% endblock contenido %}
+
+{% block descripcion %}
+    
+{% endblock descripcion %}

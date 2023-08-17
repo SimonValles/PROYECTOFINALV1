@@ -6,7 +6,7 @@
 {% endblock titulo %}
 
 {% block cabecera %}
-    Listado de Vendedores
+    Vendedores
 {% endblock cabecera %}
 
 {% block contenido %}
@@ -46,6 +46,12 @@
             <td>{{ vendedor.dni }}</td>
             <td>{{ vendedor.telefono }}</td>
             <td>
+                <a 
+                  href="{% url 'detail_vendedor' vendedor.id %}" 
+                  class="btn btn-info" 
+                  style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+                  ><i class="fa fa-search fa-sm" title="View Record"></i>
+                </a>
                 <a 
                   href="{% url 'update_vendedor' vendedor.id %}" 
                   class="btn btn-primary" 

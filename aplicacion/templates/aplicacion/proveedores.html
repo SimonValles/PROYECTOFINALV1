@@ -6,14 +6,14 @@
 {% endblock titulo %}
 
 {% block cabecera %}
-    Listado de Proveedores
+    Proveedores
 {% endblock cabecera %}
 
 {% block contenido %}
 
 <table>
     <tr>
-        <td width="200"><h2>Proveedores</h2></td>
+        <td width="200"><h2>Proveedor</h2></td>
         <td>
             <a
             href="{% url 'create_proveedor' %}"
@@ -45,6 +45,12 @@
             <td>{{ proveedor.domicilio }}</td>
             <td>{{ proveedor.email }}</td>
             <td>
+                <a 
+                  href="{% url 'detail_proveedor' proveedor.id %}" 
+                  class="btn btn-info" 
+                  style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+                  ><i class="fa fa-search fa-sm" title="View Record"></i>
+                </a>
                 <a 
                   href="{% url 'update_proveedor' proveedor.id %}" 
                   class="btn btn-primary" 

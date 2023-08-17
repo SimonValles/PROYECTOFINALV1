@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 #===================Articulo=========================
@@ -44,7 +45,7 @@ class Ventas(models.Model):
     cantidad = models.IntegerField()
     
     def __str__(self):
-        return f"Codigo: ({self.codigo}) ({self.producto}) - Total Ventas = {self.cantidad} Unid."
+        return f"{self.producto} (cod. {self.codigo})"
     
     
 #===================ABOUT=========================    
@@ -53,3 +54,11 @@ class About(models.Model):
     
     def __str__(self):
         return f"{self.resumen}"
+    
+#===================AVATAR=========================    
+class Avatar(models.Model):
+    imagen = models.ImageField(upload_to="avatares")
+    user = models.ForeignKey(User, on_delete= models.CASCADE)
+    
+    def __str__(self):
+        return f"{self.user} [{self.imagen}]"
